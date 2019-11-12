@@ -1,14 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import ogImage from '../images/og-1200x630.png'
+import twitterImage from '../images/twitter-1200x1200.png'
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -19,6 +14,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -26,6 +22,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const { siteUrl } = site.siteMetadata
 
   return (
     <Helmet
@@ -41,7 +38,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.title}`,
         },
         {
           property: `og:description`,
@@ -52,20 +49,44 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `${siteUrl}${ogImage}`,
+        },
+        {
+          property: `og:image:url`,
+          content: `${siteUrl}${ogImage}`,
+        },
+        {
+          property: `og:image:secure_url`,
+          content: `${siteUrl}${ogImage}`,
+        },
+        {
+          property: `og:image:type`,
+          content: `image/png`,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
         {
+          name: `twitter:site`,
+          content: site.siteMetadata.author,
+        },
+        {
           name: `twitter:title`,
-          content: title,
+          content: `${title} | ${site.siteMetadata.title}`,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image:src`,
+          content: `${siteUrl}${twitterImage}`,
         },
       ].concat(meta)}
     />

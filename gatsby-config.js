@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Redfish`,
+    siteUrl: `https://redfish-mirror.netlify.com/`,
+    description: `Serveless Boilerplate Web Application. GatsbyJS, Create React App, GraphQL Apollo Client, Django, Python, Graphene.`,
+    author: `@guandjoy`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +19,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `redfish`,
+        short_name: `redfish`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FF4A64`,
+        theme_color: `#FF4A64`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
