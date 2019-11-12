@@ -37,6 +37,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content: `${siteUrl}`,
+        },
+        {
           property: `og:title`,
           content: `${title} | ${site.siteMetadata.title}`,
         },
@@ -63,6 +67,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:image:type`,
           content: `image/png`,
+        },
+        {
+          property: `fb:app_id`,
+          content: `432672034191065`,
         },
         {
           name: `twitter:card`,
